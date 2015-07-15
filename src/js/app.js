@@ -1,8 +1,8 @@
 'use strict';
 
-import HelloWorld from './components/HelloWorld';
+import NihongoApp from './components/NihongoApp';
 
 React.render(
-	<HelloWorld />,
+	<NihongoApp />,
 	document.getElementById("app")
 );
