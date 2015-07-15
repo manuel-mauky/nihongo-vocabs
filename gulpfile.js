@@ -2,15 +2,16 @@
 
 var browserify = require('browserify');
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
-var babelify = require('babelify');
+var reactify = require('reactify');
 
 gulp.task('js', function () {
     browserify({
         entries: './src/js/app.js',
         debug: true
     })
-    .transform(babelify)
+    .transform(reactify)
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./dist/js/'));

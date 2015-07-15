@@ -1,6 +1,6 @@
 'use strict';
 
-import NihongoApp from './components/NihongoApp';
+var NihongoApp = require("./components/NihongoApp");
 
 React.render(
 	<NihongoApp />,

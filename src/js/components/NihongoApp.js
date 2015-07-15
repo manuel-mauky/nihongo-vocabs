@@ -1,16 +1,16 @@
 'use strict';
 
-import Vocable from './Vocable'
+var Vocable = require("./Vocable");
 
-class NihongoApp extends React.Component {
+var NihongoApp = React.createClass({
 	render() {
 			return (
 				<div>
 					<h1>nihongo</h1>
-					<Vocable />
+					<Vocable kana="ほん" transcription="hon" translation="book"/>
 				</div>
 			)
 	}
-}
+});
 
-export default NihongoApp;
+module.exports = NihongoApp;
