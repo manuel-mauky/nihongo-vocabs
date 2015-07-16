@@ -6,5 +6,8 @@
     "browserify": "^10.2.6",
     "gulp": "^3.9.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "comma-separated-values": "^3.6.2"
   }
 }

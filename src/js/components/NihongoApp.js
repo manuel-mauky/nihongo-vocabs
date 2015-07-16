@@ -1,13 +1,14 @@
 'use strict';
 
-var Vocable = require("./Vocable");
+var Dictionary = require("./Dictionary");
 
 var NihongoApp = React.createClass({
-	render() {
+
+	render: function() {
 			return (
 				<div>
 					<h1>nihongo</h1>
-					<Vocable kana="ほん" transcription="hon" translation="book"/>
+					<Dictionary />
 				</div>
 			)
 	}
