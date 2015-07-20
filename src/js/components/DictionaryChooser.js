@@ -12,7 +12,7 @@ var DictionaryChooser = React.createClass({
 	},
 
 	loadVocables: function() {
-		$.get("german_hiragana.csv", function(result){
+		$.get("dictionaries/german_hiragana.csv", function(result){
 			var options = {header:true};
 			var csv = new CSV(result,options).parse();
 

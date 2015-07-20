@@ -13,8 +13,8 @@ gulp.task('js', function () {
     })
     .transform(reactify)
     .bundle()
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest('./dist/js/'));
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./build/'));
 });
 
 gulp.task('watch', function() {
