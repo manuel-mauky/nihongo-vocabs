@@ -25,21 +25,19 @@ var DictionaryChooser = React.createClass({
 	},
 
 	render: function() {
-
-		var dictionary;
-
 		if(this.state.vocables.length > 0) {
-			dictionary = <Dictionary vocables={this.state.vocables} />
-		}
-
-		return (
-			<div>
-				<button onClick={this.loadVocables} type="button" className="btn btn-default">Load Vocables</button>
+			return (
 				<div>
-					{dictionary}
+					<Dictionary vocables={this.state.vocables} />
 				</div>
-			</div>
-		)
+			)
+		} else {
+			return (
+				<div>
+					<button onClick={this.loadVocables} type="button" className="btn btn-default">Load Vocables</button>
+				</div>
+			)
+		}
 	}
 });
 

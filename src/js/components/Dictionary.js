@@ -4,9 +4,13 @@ var Vocable = require("./Vocable");
 
 var Dictionary = React.createClass({
 
-	// propTypes: {
-	// 	vocables: React.PropTypes.arrayOf(Vocable).isRequired
-	// },
+	propTypes: {
+		vocables: React.PropTypes.arrayOf(React.PropTypes.shape({
+			kana: React.PropTypes.string,
+			transcription: React.PropTypes.string,
+			translation: React.PropTypes.string
+		})).isRequired
+	},
 
 	getInitialState: function() {
 		return {
@@ -20,13 +24,12 @@ var Dictionary = React.createClass({
 	},
 
 	next: function() {
-
 		var vocablesLeft;
 
 		if(this.state.vocablesLeft.length == 0) {
-			vocablesLeft = this.props.vocables; // start again with initial vocables
+			vocablesLeft = this.props.vocables.slice(); // start again with initial vocables
 		} else {
-			vocablesLeft = this.state.vocablesLeft;
+			vocablesLeft = this.state.vocablesLeft.slice();
 		}
 
 		if(vocablesLeft.length > 0) {
@@ -45,11 +48,11 @@ var Dictionary = React.createClass({
 				currentVocable: null,
 			});
 		}
-
-
 	},
 
 	render: function() {
+
+
 		var vocable = this.state.currentVocable ?
 						<Vocable kana={this.state.currentVocable.kana}
 								transcription={this.state.currentVocable.transcription}
