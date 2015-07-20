@@ -1,6 +1,6 @@
 'use strict';
 
-var Dictionary = require("./Dictionary");
+var DictionaryChooser = require("./DictionaryChooser");
 
 var NihongoApp = React.createClass({
 
@@ -8,7 +8,7 @@ var NihongoApp = React.createClass({
 			return (
 				<div>
 					<h1>nihongo</h1>
-					<Dictionary />
+					<DictionaryChooser />
 				</div>
 			)
 	}

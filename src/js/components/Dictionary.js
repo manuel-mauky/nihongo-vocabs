@@ -1,77 +1,64 @@
 'use strict';
 
 var Vocable = require("./Vocable");
-var CSV = require('comma-separated-values');
 
 var Dictionary = React.createClass({
 
+	// propTypes: {
+	// 	vocables: React.PropTypes.arrayOf(Vocable).isRequired
+	// },
+
 	getInitialState: function() {
 		return {
-			vocables: [],
-			vocableToShow: null,
-			loadingComplete: false
+			currentVocable: null,
+			vocablesLeft: []
 		}
 	},
 
-	loadVocables: function() {
-		$.get("german_hiragana.csv", function(result){
-			var options = {header:true};
-			var csv = new CSV(result,options).parse();
-
-			if(Array.isArray(csv) && csv.length > 0) {
-
-				var i = Math.floor(Math.random() * csv.length);
-				var nextVocable = csv.splice(i, 1);
-
-				this.setState({
-					vocables: csv,
-					vocableToShow:nextVocable[0],
-					loadingComplete:true
-				});
-			}
-		}.bind(this));
+	componentWillMount: function() {
+		this.next();
 	},
 
-	nextVocable: function() {
-		var allVocables = this.state.vocables;
+	next: function() {
 
-		if(allVocables.length > 0) {
-			var i = Math.floor(Math.random() * allVocables.length);
+		var vocablesLeft;
 
-			var nextVocable = allVocables.splice(i, 1);
+		if(this.state.vocablesLeft.length == 0) {
+			vocablesLeft = this.props.vocables; // start again with initial vocables
+		} else {
+			vocablesLeft = this.state.vocablesLeft;
+		}
+
+		if(vocablesLeft.length > 0) {
+
+			var i = Math.floor(Math.random() * vocablesLeft.length);
+
+			var nextVocable = vocablesLeft.splice(i, 1);
 
 			this.setState({
-				vocables: allVocables,
-				vocableToShow:nextVocable[0],
+				vocablesLeft: vocablesLeft,
+				currentVocable: nextVocable[0],
 			});
+
 		} else {
 			this.setState({
-				vocableToShow:null
-			})
+				currentVocable: null,
+			});
 		}
+
+
 	},
 
 	render: function() {
-		var nextVocable = this.state.vocableToShow;
-		var vocable = nextVocable ?
-						<Vocable kana={nextVocable.kana} transcription={nextVocable.transcription} translation={nextVocable.translation} />
+		var vocable = this.state.currentVocable ?
+						<Vocable kana={this.state.currentVocable.kana}
+								transcription={this.state.currentVocable.transcription}
+								translation={this.state.currentVocable.translation} />
 						: null;
-
-
-		var button;
-		if(this.state.loadingComplete) {
-			if(this.state.vocables.length > 0) {
-				button = <button onClick={this.nextVocable} type="button" className="btn btn-primary">Next (left: {this.state.vocables.length})</button>;
-			} else {
-				button = <button onClick={this.loadVocables} type="button" className="btn btn-default">Reload Vocables</button>;
-			}
-		} else {
-			button = <button onClick={this.loadVocables} type="button" className="btn btn-default">Load Vocables</button>;
-		}
 
 		return (
 			<div>
-				{button}
+				<button onClick={this.next} type="button" className="btn btn-primary">Next</button>
 				<div>
 					{vocable}
 				</div>
