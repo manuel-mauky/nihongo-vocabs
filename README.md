@@ -1,16 +1,6 @@
+# 日本語
 
+Nihongo is an webapp to support the learning of japanese especially the kana scripts by providing exercises. 
+Try it out here: https://lestard.github.io/nihongo/
 
-
-## Run
-
-1. [Install gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
-`npm install --global gulp`
-
-2. Install dependencies
-
-`npm install`
-
-3. Run gulp
-`gulp watch`
-
-4. Open index.html in browser
+On the other hand it's a playground project for me to learn [react.js](https://facebook.github.io/react/).
