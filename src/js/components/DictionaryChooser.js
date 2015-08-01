@@ -5,6 +5,16 @@ var CSV = require('comma-separated-values');
 
 var DictionaryChooser = React.createClass({
 
+	propTypes: {
+		initialRevealState: React.PropTypes.oneOf(['transcription','kana','translation'])
+	},
+
+	getDefaultProps: function() {
+		return {
+			initialRevealState: 'transcription'
+		};
+	},
+
 	getInitialState: function() {
 		return {
 			vocables: [],
@@ -28,7 +38,8 @@ var DictionaryChooser = React.createClass({
 		if(this.state.vocables.length > 0) {
 			return (
 				<div>
-					<Dictionary vocables={this.state.vocables} />
+					<Dictionary vocables={this.state.vocables}
+					initialRevealState={this.props.initialRevealState}  />
 				</div>
 			)
 		} else {

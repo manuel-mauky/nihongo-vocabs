@@ -9,7 +9,15 @@ var Dictionary = React.createClass({
 			kana: React.PropTypes.string,
 			transcription: React.PropTypes.string,
 			translation: React.PropTypes.string
-		})).isRequired
+		})).isRequired,
+
+		initialRevealState: React.PropTypes.oneOf(['transcription','kana','translation'])
+	},
+
+	getDefaultProps: function() {
+		return {
+			initialRevealState: 'transcription'
+		};
 	},
 
 	getInitialState: function() {
@@ -51,12 +59,11 @@ var Dictionary = React.createClass({
 	},
 
 	render: function() {
-
-
 		var vocable = this.state.currentVocable ?
 						<Vocable kana={this.state.currentVocable.kana}
 								transcription={this.state.currentVocable.transcription}
-								translation={this.state.currentVocable.translation} />
+								translation={this.state.currentVocable.translation}
+								initialRevealState={this.props.initialRevealState} />
 						: null;
 
 		return (

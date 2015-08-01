@@ -3,13 +3,35 @@
 var Vocable = React.createClass({
 	getInitialState: function() {
 		return {
-			current : "transcription"
+			current : this.props.initialRevealState
 		}
 	},
+
+	propTypes: {
+		transcription: React.PropTypes.string.isRequired,
+		kana: React.PropTypes.string.isRequired,
+		translation: React.PropTypes.string.isRequired,
+
+		initialRevealState: React.PropTypes.oneOf(['transcription','kana','translation'])
+	},
+
+	getDefaultProps: function() {
+		return {
+			initialRevealState: 'transcription'
+		};
+	},
+
+	componentWillReceiveProps: function(nextProps) {
+		this.setState({
+			current: nextProps.initialRevealState
+		})
+	},
+
+
 	getText: function() {
 		return this.props[this.state.current];
 	},
-	switchVocable: function() {
+	revealVocable: function() {
 		switch(this.state.current) {
 			case "transcription":
 				this.setState({current: "kana"});
@@ -35,7 +57,7 @@ var Vocable = React.createClass({
 					<span>{this.state.current}:</span>
 					<br/>
 					<span id="text" style={style}>{this.getText()}</span>
-					<button onClick={this.switchVocable} type="button" className="btn btn-primary pull-right">Switch</button>
+					<button onClick={this.revealVocable} type="button" className="btn btn-primary pull-right">Reveal</button>
 				</div>
 			</div>
 		)
