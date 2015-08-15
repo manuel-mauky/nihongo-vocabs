@@ -1,70 +1,70 @@
-transcription,kana,translation
-hon,ほん,Buch
-hai,はい,Ja
-iie,いいえ,Nein
-isu,いす,Stuhl
-ha,は,Zahn
-te,て,Hand
-tsukue,つくえ,Tisch
-Kagi,かぎ,Schlüssel
-Kaban,かばん,Tasche
-Pen,ぺん,Stift
-Mado,まど,Fenster
-Chizu,ちず,Landkarte
-Terebi,てれび,Fernsehr
-Ohayô,おはよう,Guten Morgen
-konbanwa,こんばんわ,Guten Abend
-Oyasuminasai,おやすみなさい,Gute Nacht
-kon'nichiwa,こんにちわ,Guten Tag
-Hajimemashite,はじめまして,Wie gehts?
-sayônara,さようなら,Auf Wiedersehen
-arigatô,ありがとう,Danke
-sumimasen,すみません,Entschuldigung
-Gomen'nasai,ごめんなさい,Es tut mir leid
-Dôzo,どぞ,Bitteschön
-Dôitashimashite,どういたしまして,Gern geschehen
-shigoto,しごと,Beruf
-Kaishain,かいしゃいん,Angestellter
-Panya,ぱにゃ,Bäcker
-Isha,いしゃ,Arzt
-Gakusei,がくせい,Student
-Biyôshi,びようし,Frisör
-Nôka,のうか,Landwirt
-Yakkyoku,やっきょく,Apotheke
-hisho,ひしょ,Sekretär
-Uwagi,うわぎ,Jacke
-Megane,めがね,Brille
-Keshigomu,けしごむ,Radiergummi
-Enpitsu,えんぴつ,Bleistift
-Kyôkasho,きょうかしょ,Lehrbuch
-Kasa,かさ,Regenschirm
-Asa,あさ,Morgen/Früh
-Sekai,せかい,Welt
-Uso,うそ,Lüge
-Suiei,すいえい,Schwimmen (Substantiv)
-ongaku,おんがく,Musik
-uchi,うち,Zuhause
-ie,いえ,Haus
-Shio,しお,Salz
-satou,さとう,Zucker
-mimasu,みます,sehen
-nomimasu,のみます,trinken
-kiku,きく,schreiben
-oyogu,およぐ,schwimmen (Verb)
-hanasu,はなす,sprechen
-ninjin,にんじん,Karotte
-tamago,たまご,Ei
-aoi,あおい,Blau
-amai,あまい,Süß
-yume,ゆめ,Traum
-hanaya,はなや,Blumenladen
-ani,あに,mein Bruder
-oniisan,おにいさん,jemandes Bruder
-chichi,ちち,mein Vater
-otôsan,おとうさん,jemandes Vater
-shinbun,しんぶん,Zeitung
-zasshi,ざっし,Zeitschrift
-umi,うみ,Meer
-Mizuumi,みずうみ,See
-yama,やま,Berg
-tozan,とざん,Bergsteigen
+transcription;kana;translation
+hon;ほん;Buch
+hai;はい;Ja
+iie;いいえ;Nein
+isu;いす;Stuhl
+ha;は;Zahn
+te;て;Hand
+tsukue;つくえ;Tisch
+Kagi;かぎ;Schlüssel
+Kaban;かばん;Tasche
+Pen;ぺん;Stift
+Mado;まど;Fenster
+Chizu;ちず;Landkarte
+Terebi;てれび;Fernsehr
+Ohayô;おはよう;Guten Morgen
+konbanwa;こんばんわ;Guten Abend
+Oyasuminasai;おやすみなさい;Gute Nacht
+kon'nichiwa;こんにちわ;Guten Tag
+Hajimemashite;はじめまして;Wie gehts?
+sayônara;さようなら;Auf Wiedersehen
+arigatô;ありがとう;Danke
+sumimasen;すみません;Entschuldigung
+Gomen'nasai;ごめんなさい;Es tut mir leid
+Dôzo;どぞ;Bitteschön
+Dôitashimashite;どういたしまして;Gern geschehen
+shigoto;しごと;Beruf
+Kaishain;かいしゃいん;Angestellter
+Panya;ぱにゃ;Bäcker
+Isha;いしゃ;Arzt
+Gakusei;がくせい;Student
+Biyôshi;びようし;Frisör
+Nôka;のうか;Landwirt
+Yakkyoku;やっきょく;Apotheke
+hisho;ひしょ;Sekretär
+Uwagi;うわぎ;Jacke
+Megane;めがね;Brille
+Keshigomu;けしごむ;Radiergummi
+Enpitsu;えんぴつ;Bleistift
+Kyôkasho;きょうかしょ;Lehrbuch
+Kasa;かさ;Regenschirm
+Asa;あさ;Morgen/Früh
+Sekai;せかい;Welt
+Uso;うそ;Lüge
+Suiei;すいえい;Schwimmen (Substantiv)
+ongaku;おんがく;Musik
+uchi;うち;Zuhause
+ie;いえ;Haus
+Shio;しお;Salz
+satou;さとう;Zucker
+mimasu;みます;sehen
+nomimasu;のみます;trinken
+kiku;きく;schreiben
+oyogu;およぐ;schwimmen (Verb)
+hanasu;はなす;sprechen
+ninjin;にんじん;Karotte
+tamago;たまご;Ei
+aoi;あおい;Blau
+amai;あまい;Süß
+yume;ゆめ;Traum
+hanaya;はなや;Blumenladen
+ani;あに;mein Bruder
+oniisan;おにいさん;jemandes Bruder
+chichi;ちち;mein Vater
+otôsan;おとうさん;jemandes Vater
+shinbun;しんぶん;Zeitung
+zasshi;ざっし;Zeitschrift
+umi;うみ;Meer
+Mizuumi;みずうみ;See
+yama;やま;Berg
+tozan;とざん;Bergsteigen
