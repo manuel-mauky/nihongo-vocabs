@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var React = require("react");
 
@@ -13,12 +13,12 @@ var Dictionary = React.createClass({
 			translation: React.PropTypes.string
 		})).isRequired,
 
-		initialRevealState: React.PropTypes.oneOf(['transcription','kana','translation'])
+		initialRevealState: React.PropTypes.oneOf(["transcription","kana","translation"])
 	},
 
 	getDefaultProps: function() {
 		return {
-			initialRevealState: 'transcription'
+			initialRevealState: "transcription"
 		};
 	},
 
@@ -50,12 +50,12 @@ var Dictionary = React.createClass({
 
 			this.setState({
 				vocablesLeft: vocablesLeft,
-				currentVocable: nextVocable[0],
+				currentVocable: nextVocable[0]
 			});
 
 		} else {
 			this.setState({
-				currentVocable: null,
+				currentVocable: null
 			});
 		}
 	},

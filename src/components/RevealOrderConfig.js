@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var React = require("react");
 
 var RevealOrderConfig = React.createClass({
@@ -16,16 +16,15 @@ var RevealOrderConfig = React.createClass({
 	render: function() {
 		return (
 			<div className="panel panel-default">
-			  <div className="panel-body">
+				<div className="panel-body">
+					<p>What should be revealed initially?</p>
 
-				<p>What should be revealed initially?</p>
-
-				<select className="form-control" onChange={this.onChange}>
-					<option value="transcription">Transcription (e.g. "nihongo")</option>
-					<option value="kana">Kana (e.g. "にほんご")</option>
-					<option value="translation">Translation (e.g. "Japanese")</option>
-				</select>
-			  </div>
+					<select className="form-control" onChange={this.onChange}>
+						<option value="transcription">Transcription (e.g. "nihongo")</option>
+						<option value="kana">Kana (e.g. "にほんご")</option>
+						<option value="translation">Translation (e.g. "Japanese")</option>
+					</select>
+				</div>
 			</div>
 		)
 	}

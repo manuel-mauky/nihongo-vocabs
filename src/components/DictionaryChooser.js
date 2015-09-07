@@ -1,26 +1,28 @@
-'use strict';
+"use strict";
 
 
 var React = require("react");
 
+var $ = require("jquery");
+
 var Dictionary = require("./Dictionary");
-var CSV = require('comma-separated-values');
+var CSV = require("comma-separated-values");
 
 var DictionaryChooser = React.createClass({
 
 	propTypes: {
-		initialRevealState: React.PropTypes.oneOf(['transcription','kana','translation'])
+		initialRevealState: React.PropTypes.oneOf(["transcription","kana","translation"])
 	},
 
 	getDefaultProps: function() {
 		return {
-			initialRevealState: 'transcription'
+			initialRevealState: "transcription"
 		};
 	},
 
 	getInitialState: function() {
 		return {
-			vocables: [],
+			vocables: []
 		}
 	},
 

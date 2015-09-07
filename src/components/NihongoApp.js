@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var React = require("react");
 
@@ -8,7 +8,7 @@ var NihongoApp = React.createClass({
 
 	getInitialState: function() {
 		return {
-			initialRevealState: 'transcription'
+			initialRevealState: "transcription"
 		}
 	},
 
@@ -19,21 +19,21 @@ var NihongoApp = React.createClass({
 	},
 
 	render: function() {
-			return (
-				<div>
-					<h1>nihongo</h1>
+		return (
+			<div>
+				<h1>nihongo</h1>
 
-					<div className="row">
-						<div className="col-md-8">
-							<DictionaryChooser initialRevealState={this.state.initialRevealState} />
-						</div>
-						<div className="col-md-4">
-							<RevealOrderConfig onSelect={this.changeInitialRevealState}/>
-						</div>
+				<div className="row">
+					<div className="col-md-8">
+						<DictionaryChooser initialRevealState={this.state.initialRevealState} />
 					</div>
-
+					<div className="col-md-4">
+						<RevealOrderConfig onSelect={this.changeInitialRevealState}/>
+					</div>
 				</div>
-			)
+
+			</div>
+		)
 	}
 });
 

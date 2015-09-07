@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var React = require("react");
 
@@ -14,13 +14,13 @@ var Vocable = React.createClass({
 		kana: React.PropTypes.string.isRequired,
 		translation: React.PropTypes.string.isRequired,
 
-		initialRevealState: React.PropTypes.oneOf(['transcription','kana','translation'])
+		initialRevealState: React.PropTypes.oneOf(["transcription","kana","translation"])
 	},
 
 	getDefaultProps: function() {
 		return {
-			initialRevealState: 'transcription'
-		};
+			initialRevealState: "transcription"
+		}
 	},
 
 	componentWillReceiveProps: function(nextProps) {
@@ -35,22 +35,22 @@ var Vocable = React.createClass({
 	},
 	revealVocable: function() {
 		switch(this.state.current) {
-			case "transcription":
-				this.setState({current: "kana"});
-				break;
-			case "kana":
-				this.setState({current: "translation"});
-				break;
-			case "translation":
-				this.setState({current: "transcription"});
-				break;
+		case "transcription":
+			this.setState({current: "kana"});
+			break;
+		case "kana":
+			this.setState({current: "translation"});
+			break;
+		case "translation":
+			this.setState({current: "transcription"});
+			break;
 		}
 	},
 
 	render: function() {
 		var style = {
-			fontSize: '2em',
-			fontWeight: 'bold'
+			fontSize: "2em",
+			fontWeight: "bold"
 		};
 
 		return(
