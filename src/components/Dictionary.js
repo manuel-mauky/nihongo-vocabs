@@ -1,5 +1,7 @@
 'use strict';
 
+var React = require("react");
+
 var Vocable = require("./Vocable");
 
 var Dictionary = React.createClass({

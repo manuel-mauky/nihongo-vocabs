@@ -1,5 +1,7 @@
 'use strict';
 
+var React = require("react");
+
 var Vocable = React.createClass({
 	getInitialState: function() {
 		return {

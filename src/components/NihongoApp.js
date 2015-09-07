@@ -1,5 +1,7 @@
 'use strict';
 
+var React = require("react");
+
 var DictionaryChooser = require("./DictionaryChooser");
 var RevealOrderConfig = require("./RevealOrderConfig");
 var NihongoApp = React.createClass({

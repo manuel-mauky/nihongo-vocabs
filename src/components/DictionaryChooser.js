@@ -1,5 +1,8 @@
 'use strict';
 
+
+var React = require("react");
+
 var Dictionary = require("./Dictionary");
 var CSV = require('comma-separated-values');
 
