@@ -1,25 +1,25 @@
-module.exports = {
-	entry: "./src/app.js",
+var webpack = require('webpack');
+var path = require('path');
+
+var BUILD_DIR = path.resolve(__dirname, 'build');
+var APP_DIR = path.resolve(__dirname, 'src');
+
+
+var config = {
+	entry: APP_DIR + '/index.jsx',
 	output: {
-		filename: "./build/bundle.js"
+		path: BUILD_DIR,
+		filename: 'bundle.js'
 	},
-	module: {
-		preLoaders: [
-	      {
-	        test: /\.js$/,
-	        loader: 'eslint-loader',
-			exclude: /node_modules/
-	      }
-	   ],
-		loaders: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader'
-			}
-		]
-	},
-	resolve: {
-		extensions: ['', '.js']
-	}
-}
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?/,
+        include: APP_DIR,
+        loader: 'babel'
+      }
+    ]
+  }
+};
+
+module.exports = config;

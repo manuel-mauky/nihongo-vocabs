@@ -1,10 +1,9 @@
-"use strict";
-
-var React = require("react");
+import React from 'react';
+import {render} from 'react-dom';
 
 var NihongoApp = require("./components/NihongoApp");
 
-React.render(
+render(
 	<NihongoApp />,
 	document.getElementById("app")
 );
