@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="140.60448"
+   height="141.13185"
+   viewBox="0 0 140.60447 141.13184"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="favicon.svg"
+   inkscape:export-filename="/home/manuel/projekte/nihongo-vocabs/favicon.png"
+   inkscape:export-xdpi="81.931961"
+   inkscape:export-ydpi="81.931961"
+   style="enable-background:new">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient4150"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#26596a;stop-opacity:1"
+         offset="0"
+         id="stop4152" />
+      <stop
+         style="stop-color:#072f4d;stop-opacity:0.50196081"
+         offset="1"
+         id="stop4154" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4150"
+       id="linearGradient5786"
+       x1="402.08572"
+       y1="302.71933"
+       x2="402.08572"
+       y2="146.64792"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0230523,0,0,1.0266181,-336.72427,-158.54624)" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4539"
+       x="-0.012020912"
+       width="1.0240418"
+       y="-0.011979161"
+       height="1.0239583">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.68810364"
+         id="feGaussianBlur4541" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4555"
+       x="-0.012023045"
+       width="1.0240461"
+       y="-0.011977043"
+       height="1.0239542">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.68783283"
+         id="feGaussianBlur4557" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.65"
+     inkscape:cx="66.111164"
+     inkscape:cy="76.805312"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     units="px"
+     inkscape:window-width="2560"
+     inkscape:window-height="1335"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4375"
+       originx="-2.1741242"
+       originy="1.136845" />
+    <sodipodi:guide
+       position="-13.424124,163.10114"
+       orientation="1,0"
+       id="guide4379" />
+    <sodipodi:guide
+       position="-13.424124,155.77971"
+       orientation="0,1"
+       id="guide4381" />
+    <sodipodi:guide
+       position="123.82588,17.949344"
+       orientation="0,1"
+       id="guide4435" />
+    <sodipodi:guide
+       position="123.95088,39.574343"
+       orientation="1,0"
+       id="guide4437" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="background"
+     style="display:inline"
+     transform="translate(-2.174124,-1.7033932)">
+    <rect
+       style="opacity:0;fill:#ff2f5c;fill-opacity:1;stroke:none"
+       id="rect4238"
+       width="155"
+       height="165.35715"
+       x="-4.2857141"
+       y="-12.944478" />
+    <rect
+       style="opacity:0;fill:#ff2f5c;fill-opacity:1;stroke:none"
+       id="rect4244"
+       width="95"
+       height="113.57143"
+       x="21.115677"
+       y="32.267281" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;filter:url(#filter4555)"
+       id="rect4262"
+       width="137.30289"
+       height="137.83025"
+       x="3.8249228"
+       y="3.354192" />
+  </g>
+  <g
+     inkscape:label="text"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-176.32495,-150.00214)"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="186.76701"
+       y="216.70863"
+       id="text3336"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3338"
+         x="186.76701"
+         y="216.70863"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'">日本語</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="187.81567"
+       y="274.05273"
+       id="text3340"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3342"
+         x="187.81567"
+         y="274.05273"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono Bold'">Vocabs</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="overlay"
+     style="display:inline"
+     transform="translate(-2.174124,-1.7033932)">
+    <rect
+       style="display:inline;fill:url(#linearGradient5786);fill-opacity:1;stroke:none;filter:url(#filter4539)"
+       id="rect3348"
+       width="137.38132"
+       height="137.86014"
+       x="3.8059981"
+       y="3.3713095" />
+  </g>
+</svg>
