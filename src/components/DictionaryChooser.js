@@ -1,32 +1,29 @@
-"use strict";
+import React from "react"
+import PropTypes from "prop-types"
 
+import $ from "jquery"
 
-var React = require("react");
+import Dictionary from "./Dictionary"
+import CSV from "comma-separated-values";
 
-var $ = require("jquery");
+export default class DictionaryChooser extends React.Component {
 
-var Dictionary = require("./Dictionary");
-var CSV = require("comma-separated-values");
+	static defaultProps = {
+		initialRevealState: "transcription"
+	}
 
-var DictionaryChooser = React.createClass({
+	static propTypes = {
+		initialRevealState: PropTypes.oneOf(["transcription","kana","translation"])
+	}
 
-	propTypes: {
-		initialRevealState: React.PropTypes.oneOf(["transcription","kana","translation"])
-	},
-
-	getDefaultProps: function() {
-		return {
-			initialRevealState: "transcription"
-		};
-	},
-
-	getInitialState: function() {
-		return {
+	constructor() {
+		super()
+		this.state = {
 			vocables: []
 		}
-	},
+	}
 
-	loadVocables: function() {
+	loadVocables = () => {
 		$.get("dictionaries/german_hiragana.csv", function(result){
 			var options = {header:true};
 			var csv = new CSV(result,options).parse();
@@ -37,9 +34,9 @@ var DictionaryChooser = React.createClass({
 				});
 			}
 		}.bind(this));
-	},
+	}
 
-	render: function() {
+	render() {
 		if(this.state.vocables.length > 0) {
 			return (
 				<div>
@@ -55,6 +52,4 @@ var DictionaryChooser = React.createClass({
 			)
 		}
 	}
-});
-
-module.exports = DictionaryChooser;
+}

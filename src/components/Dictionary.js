@@ -1,42 +1,39 @@
-"use strict";
+import React from "react"
+import PropTypes from "prop-types"
+import Vocable from './Vocable'
 
-var React = require("react");
+export default class Dictionary extends React.Component {
 
-var Vocable = require("./Vocable");
+	static defaultProps = {
+		initialRevealState: "transcription"
+	}
 
-var Dictionary = React.createClass({
-
-	propTypes: {
-		vocables: React.PropTypes.arrayOf(React.PropTypes.shape({
-			kana: React.PropTypes.string,
-			transcription: React.PropTypes.string,
-			translation: React.PropTypes.string
+	static propTypes = {
+		vocables: PropTypes.arrayOf(PropTypes.shape({
+			kana: PropTypes.string,
+			transcription: PropTypes.string,
+			translation: PropTypes.string
 		})).isRequired,
 
-		initialRevealState: React.PropTypes.oneOf(["transcription","kana","translation"])
-	},
+		initialRevealState: PropTypes.oneOf(["transcription","kana","translation"])
+	}
 
-	getDefaultProps: function() {
-		return {
-			initialRevealState: "transcription"
-		};
-	},
-
-	getInitialState: function() {
-		return {
+	constructor() {
+		super()
+		this.state = {
 			currentVocable: null,
 			vocablesLeft: []
 		}
-	},
+	}
 
-	componentWillMount: function() {
+	componentWillMount() {
 		this.next();
-	},
+	}
 
-	next: function() {
+	next = () => {
 		var vocablesLeft;
 
-		if(this.state.vocablesLeft.length == 0) {
+		if(this.state.vocablesLeft.length === 0) {
 			vocablesLeft = this.props.vocables.slice(); // start again with initial vocables
 		} else {
 			vocablesLeft = this.state.vocablesLeft.slice();
@@ -58,9 +55,9 @@ var Dictionary = React.createClass({
 				currentVocable: null
 			});
 		}
-	},
+	}
 
-	render: function() {
+	render() {
 		var vocable = this.state.currentVocable ?
 						<Vocable kana={this.state.currentVocable.kana}
 								transcription={this.state.currentVocable.transcription}
@@ -77,6 +74,4 @@ var Dictionary = React.createClass({
 			</div>
 		)
 	}
-});
-
-module.exports = Dictionary;
+}

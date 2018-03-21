@@ -1,40 +1,40 @@
-"use strict";
+import React from "react";
 
-var React = require("react");
+import DictionaryChooser from "./DictionaryChooser";
+import RevealOrderConfig from "./RevealOrderConfig";
 
-var DictionaryChooser = require("./DictionaryChooser");
-var RevealOrderConfig = require("./RevealOrderConfig");
-var NihongoApp = React.createClass({
+export default class NihongoApp extends React.Component {
 
-	getInitialState: function() {
-		return {
+	constructor() {
+		super()
+		this.state = {
 			initialRevealState: "transcription"
 		}
-	},
+	}
 
-	changeInitialRevealState: function(newState) {
+	changeInitialRevealState = (newState) => {
 		this.setState({
 			initialRevealState: newState
 		})
-	},
+	}
 
-	render: function() {
+	render() {
 		return (
-			<div>
-				<h1>nihongo</h1>
+			<div className="container">
+				<div>
+					<h1>nihongo</h1>
 
-				<div className="row">
-					<div className="col-md-8">
-						<DictionaryChooser initialRevealState={this.state.initialRevealState} />
+					<div className="row">
+						<div className="col-md-8">
+							<DictionaryChooser initialRevealState={this.state.initialRevealState} />
+						</div>
+						<div className="col-md-4">
+							<RevealOrderConfig onSelect={this.changeInitialRevealState}/>
+						</div>
 					</div>
-					<div className="col-md-4">
-						<RevealOrderConfig onSelect={this.changeInitialRevealState}/>
-					</div>
+
 				</div>
-
 			</div>
 		)
 	}
-});
-
-module.exports = NihongoApp;
+}

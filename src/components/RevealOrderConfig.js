@@ -1,19 +1,19 @@
-"use strict";
-var React = require("react");
+import React from "react";
+import PropTypes from "prop-types"
 
-var RevealOrderConfig = React.createClass({
+export default class RevealOrderConfig extends React.Component {
 
-	propTypes: {
-		onSelect: React.PropTypes.func
-	},
+	static propTypes = {
+		onSelect: PropTypes.func
+	}
 
-	onChange: function(event) {
+	onChange(event) {
 		if(this.props.onSelect) {
 			this.props.onSelect(event.target.value);
 		}
-	},
+	}
 
-	render: function() {
+	render() {
 		return (
 			<div className="panel panel-default">
 				<div className="panel-body">
@@ -28,6 +28,4 @@ var RevealOrderConfig = React.createClass({
 			</div>
 		)
 	}
-});
-
-module.exports = RevealOrderConfig;
+}

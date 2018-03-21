@@ -1,39 +1,39 @@
-"use strict";
+import React from "react";
+import PropTypes from "prop-types"
 
-var React = require("react");
+export default class Vocable extends React.Component {
 
-var Vocable = React.createClass({
-	getInitialState: function() {
-		return {
-			current : this.props.initialRevealState
+	constructor(props) {
+		super()
+		this.state = {
+			current : props.initialRevealState
 		}
-	},
+	}
 
-	propTypes: {
-		transcription: React.PropTypes.string.isRequired,
-		kana: React.PropTypes.string.isRequired,
-		translation: React.PropTypes.string.isRequired,
+	static propTypes = {
+		transcription: PropTypes.string.isRequired,
+		kana: PropTypes.string.isRequired,
+		translation: PropTypes.string.isRequired,
 
-		initialRevealState: React.PropTypes.oneOf(["transcription","kana","translation"])
-	},
+		initialRevealState: PropTypes.oneOf(["transcription","kana","translation"])
+	}
 
-	getDefaultProps: function() {
-		return {
+	static defaultProps = {
 			initialRevealState: "transcription"
-		}
-	},
+	}
 
-	componentWillReceiveProps: function(nextProps) {
+	componentWillReceiveProps(nextProps) {
 		this.setState({
 			current: nextProps.initialRevealState
 		})
-	},
+	}
 
 
-	getText: function() {
+	getText() {
 		return this.props[this.state.current];
-	},
-	revealVocable: function() {
+	}
+
+	revealVocable = () => {
 		switch(this.state.current) {
 		case "transcription":
 			this.setState({current: "kana"});
@@ -44,10 +44,12 @@ var Vocable = React.createClass({
 		case "translation":
 			this.setState({current: "transcription"});
 			break;
+		default:
+			this.setState({current: this.props.initialRevealState})
 		}
-	},
+	}
 
-	render: function() {
+	render() {
 		var style = {
 			fontSize: "2em",
 			fontWeight: "bold"
@@ -64,6 +66,4 @@ var Vocable = React.createClass({
 			</div>
 		)
 	}
-});
-
-module.exports = Vocable;
+}
