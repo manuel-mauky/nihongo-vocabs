@@ -6,7 +6,7 @@ export default class RevealOrderConfig extends React.Component {
     onSelect: PropTypes.func,
   }
 
-  onChange(event) {
+  onChange = (event) => {
     if (this.props.onSelect) {
       this.props.onSelect(event.target.value)
     }
