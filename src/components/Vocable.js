@@ -6,8 +6,7 @@ import type { Vocab, RevealState } from './NihongoApp'
 
 type Props = {
   vocab: Vocab,
-  revealState: RevealState,
-  revealVocable: () => void
+  revealState: RevealState
 }
 
 const style = {
@@ -17,17 +16,12 @@ const style = {
 
 
 const Vocable = (props: Props) => (
-  <div className="panel panel-default col-md-6">
-    <div className="panel-body">
+  <div>
       <span>{props.revealState}:</span>
       <br />
       <span id="text" style={style}>
         {props.vocab[props.revealState]}
       </span>
-      <button onClick={props.revealVocable} type="button" className="btn btn-primary pull-right">
-        Reveal
-      </button>
-    </div>
   </div>
 )
 

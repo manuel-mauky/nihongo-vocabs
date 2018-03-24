@@ -11,7 +11,7 @@ import CSV from "comma-separated-values"
 export type RevealState = "transcription" | "kana" | "translation"
 
 export type Vocab = {
-  [RevealState]: string
+  [RevealState]: string,
 }
 
 type State = {
@@ -43,7 +43,7 @@ export default class NihongoApp extends React.Component<any, State> {
 
           this.setState({
             currentVocab: nextVocable,
-            vocabs: csv
+            vocabs: csv,
           })
         }
       })
@@ -76,13 +76,13 @@ export default class NihongoApp extends React.Component<any, State> {
   computeNextVocab(vocableList: Array<Vocab>): Vocab {
     const i = Math.floor(Math.random() * vocableList.length)
 
-    return vocableList.splice(i, 1)[0];
+    return vocableList.splice(i, 1)[0]
   }
 
   nextVocab = () => {
     let vocablesLeft
 
-    if(this.state.vocabsLeft.length === 0) {
+    if (this.state.vocabsLeft.length === 0) {
       vocablesLeft = this.state.vocabs
     } else {
       vocablesLeft = this.state.vocabsLeft
@@ -94,7 +94,7 @@ export default class NihongoApp extends React.Component<any, State> {
       this.setState(state => ({
         vocabsLeft: vocablesLeft,
         currentVocab: nextVocable,
-        revealState: state.initialRevealState
+        revealState: state.initialRevealState,
       }))
     } else {
       this.setState({
@@ -106,29 +106,35 @@ export default class NihongoApp extends React.Component<any, State> {
   render() {
     return (
       <div className="container">
-        <div>
-          <h1>nihongo</h1>
+        <h1>Nihongo Vocabs</h1>
 
-          <div className="row">
-            <div className="col-md-8">
-              {this.state.currentVocab ? (
+        {this.state.currentVocab ? (
+          <div className="panel panel-default">
+            <div className="panel-body">
+
+              <div style={{display: 'flex', alignItems: 'center'}}>
+                <div style={{flexGrow: 1}}>
+                  <Vocable vocab={this.state.currentVocab} revealState={this.state.revealState} />
+                </div>
+
+                <div style={{margin: '1em'}}>
+                  <button onClick={this.changeRevealState} type="button" className="btn btn-primary">
+                    Reveal
+                  </button>
+                </div>
+
                 <div>
                   <button onClick={this.nextVocab} type="button" className="btn btn-primary">
                     Next
                   </button>
-                  <div>
-                    <Vocable
-                      vocab={this.state.currentVocab}
-                      revealState={this.state.revealState}
-                      revealVocable={this.changeRevealState}
-                    />
-                  </div>
                 </div>
-              ) : null}
+                </div>
             </div>
-            <div className="col-md-4">
-              <RevealOrderConfig onSelect={this.changeInitialRevealState} />
-            </div>
+          </div>
+        ) : null}
+        <div className="panel panel-default">
+          <div className="panel-body">
+            <RevealOrderConfig onSelect={this.changeInitialRevealState} />
           </div>
         </div>
       </div>
