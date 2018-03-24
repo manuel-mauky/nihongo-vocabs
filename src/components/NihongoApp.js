@@ -1,20 +1,106 @@
+// @flow
+
 import React from "react"
 
-import DictionaryChooser from "./DictionaryChooser"
+import Vocable from "./Vocable"
+
 import RevealOrderConfig from "./RevealOrderConfig"
 
-export default class NihongoApp extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      initialRevealState: "transcription",
-    }
+import CSV from "comma-separated-values"
+
+export type RevealState = "transcription" | "kana" | "translation"
+
+export type Vocab = {
+  [RevealState]: string
+}
+
+type State = {
+  revealState: RevealState,
+  initialRevealState: RevealState,
+  vocabs: Array<Vocab>,
+  vocabsLeft: Array<Vocab>,
+  currentVocab: ?Vocab,
+}
+
+export default class NihongoApp extends React.Component<any, State> {
+  state = {
+    revealState: "translation",
+    initialRevealState: "translation",
+    vocabs: [],
+    vocabsLeft: [],
+    currentVocab: null,
   }
 
-  changeInitialRevealState = newState => {
+  componentDidMount = () => {
+    fetch("dictionaries/german_hiragana.csv")
+      .then(result => result.text())
+      .then(result => {
+        const options = { header: true }
+        const csv: Array<Vocab> = new CSV(result, options).parse()
+
+        if (Array.isArray(csv) && csv.length > 0) {
+          const nextVocable = this.computeNextVocab(csv)
+
+          this.setState({
+            currentVocab: nextVocable,
+            vocabs: csv
+          })
+        }
+      })
+  }
+
+  changeInitialRevealState = (newState: RevealState) => {
     this.setState({
       initialRevealState: newState,
     })
+  }
+
+  changeRevealState = () => {
+    this.setState(state => {
+      switch (this.state.revealState) {
+        case "transcription":
+          this.setState({ revealState: "kana" })
+          break
+        case "kana":
+          this.setState({ revealState: "translation" })
+          break
+        case "translation":
+          this.setState({ revealState: "transcription" })
+          break
+        default:
+          this.setState({ revealState: this.state.initialRevealState })
+      }
+    })
+  }
+
+  computeNextVocab(vocableList: Array<Vocab>): Vocab {
+    const i = Math.floor(Math.random() * vocableList.length)
+
+    return vocableList.splice(i, 1)[0];
+  }
+
+  nextVocab = () => {
+    let vocablesLeft
+
+    if(this.state.vocabsLeft.length === 0) {
+      vocablesLeft = this.state.vocabs
+    } else {
+      vocablesLeft = this.state.vocabsLeft
+    }
+
+    if (vocablesLeft.length > 0) {
+      const nextVocable = this.computeNextVocab(vocablesLeft)
+
+      this.setState(state => ({
+        vocabsLeft: vocablesLeft,
+        currentVocab: nextVocable,
+        revealState: state.initialRevealState
+      }))
+    } else {
+      this.setState({
+        currentVocab: null,
+      })
+    }
   }
 
   render() {
@@ -25,7 +111,20 @@ export default class NihongoApp extends React.Component {
 
           <div className="row">
             <div className="col-md-8">
-              <DictionaryChooser initialRevealState={this.state.initialRevealState} />
+              {this.state.currentVocab ? (
+                <div>
+                  <button onClick={this.nextVocab} type="button" className="btn btn-primary">
+                    Next
+                  </button>
+                  <div>
+                    <Vocable
+                      vocab={this.state.currentVocab}
+                      revealState={this.state.revealState}
+                      revealVocable={this.changeRevealState}
+                    />
+                  </div>
+                </div>
+              ) : null}
             </div>
             <div className="col-md-4">
               <RevealOrderConfig onSelect={this.changeInitialRevealState} />

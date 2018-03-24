@@ -1,30 +1,25 @@
+// @flow
+
 import React from "react"
-import PropTypes from "prop-types"
 
-export default class RevealOrderConfig extends React.Component {
-  static propTypes = {
-    onSelect: PropTypes.func,
-  }
+import type { RevealState } from "./NihongoApp"
 
-  onChange = (event) => {
-    if (this.props.onSelect) {
-      this.props.onSelect(event.target.value)
-    }
-  }
-
-  render() {
-    return (
-      <div className="panel panel-default">
-        <div className="panel-body">
-          <p>What should be revealed initially?</p>
-
-          <select className="form-control" onChange={this.onChange}>
-            <option value="transcription">Transcription (e.g. "nihongo")</option>
-            <option value="kana">Kana (e.g. "にほんご")</option>
-            <option value="translation">Translation (e.g. "Japanese")</option>
-          </select>
-        </div>
-      </div>
-    )
-  }
+type Props = {
+  onSelect: (newState: RevealState) => void,
 }
+
+const RevealOrderConfig = (props: Props) => (
+  <div className="panel panel-default">
+    <div className="panel-body">
+      <p>What should be revealed initially?</p>
+
+      <select className="form-control" onChange={event => props.onSelect(event.target.value)}>
+        <option value="transcription">Transcription (e.g. "nihongo")</option>
+        <option value="kana">Kana (e.g. "にほんご")</option>
+        <option value="translation">Translation (e.g. "Japanese")</option>
+      </select>
+    </div>
+  </div>
+)
+
+export default RevealOrderConfig
