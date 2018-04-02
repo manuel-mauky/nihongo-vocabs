@@ -8,6 +8,8 @@ import RevealOrderConfig from "./RevealOrderConfig"
 
 import CSV from "comma-separated-values"
 
+import './NihongoApp.css'
+
 export type RevealState = "transcription" | "kana" | "translation"
 
 export type Vocab = {
@@ -112,18 +114,15 @@ export default class NihongoApp extends React.Component<any, State> {
           <div className="panel panel-default">
             <div className="panel-body">
 
-              <div style={{display: 'flex', alignItems: 'center'}}>
-                <div style={{flexGrow: 1}}>
+              <div className="main-box">
+                <div className="vocab-box">
                   <Vocable vocab={this.state.currentVocab} revealState={this.state.revealState} />
                 </div>
 
-                <div style={{margin: '1em'}}>
+                <div className="button-box">
                   <button onClick={this.changeRevealState} type="button" className="btn btn-primary">
                     Reveal
                   </button>
-                </div>
-
-                <div>
                   <button onClick={this.nextVocab} type="button" className="btn btn-primary">
                     Next
                   </button>

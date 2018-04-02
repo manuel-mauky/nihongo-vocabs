@@ -1,0 +1,20 @@
+
+
+.main-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.vocab-box {
+  flex-grow: 1;
+  min-width: 20em;
+}
+
+.button-box {
+  margin-top: 1em;
+}
+
+.button-box>button {
+  margin: 0.5em;
+}
